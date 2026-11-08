@@ -1,0 +1,1020 @@
+{
+  "source": "https://github.com/chrisle/metadata-connect",
+  "commit": "c2ae262650a7bbe7af5fb5222a6ab6b882ecf865",
+  "synthetic": true,
+  "originalTestCases": 30,
+  "cases": [
+    {
+      "name": "id3-v23-all",
+      "extension": "mp3",
+      "legacy": {
+        "title": "Strobe",
+        "artist": "Artist",
+        "album": "Album",
+        "genre": "Rock",
+        "label": "Anjunadeep",
+        "year": 2024,
+        "bpm": 128.6,
+        "key": "8A",
+        "artwork": [
+          137,
+          80,
+          78,
+          71,
+          1,
+          2,
+          3,
+          4
+        ],
+        "artworkMimeType": "image/png"
+      },
+      "expected": {
+        "title": "Strobe",
+        "artist": "Artist",
+        "album": "Album",
+        "genre": "Rock",
+        "label": "Anjunadeep",
+        "year": 2024,
+        "bpm": 128.6,
+        "key": "8A",
+        "artwork": [
+          137,
+          80,
+          78,
+          71,
+          1,
+          2,
+          3,
+          4
+        ],
+        "artworkMimeType": "image/png"
+      },
+      "intentionalDifference": false,
+      "reads": [
+        [
+          0,
+          10
+        ],
+        [
+          10,
+          202
+        ]
+      ]
+    },
+    {
+      "name": "id3-v22-label",
+      "extension": "mp3",
+      "legacy": {
+        "label": "Drumcode"
+      },
+      "expected": {
+        "label": "Drumcode"
+      },
+      "intentionalDifference": false,
+      "reads": [
+        [
+          0,
+          10
+        ],
+        [
+          10,
+          15
+        ]
+      ]
+    },
+    {
+      "name": "id3-v24-unicode",
+      "extension": "mp3",
+      "legacy": {
+        "title": "Déjà 🎧",
+        "label": "Warp",
+        "year": 2001
+      },
+      "expected": {
+        "title": "Déjà 🎧",
+        "label": "Warp",
+        "year": 2001
+      },
+      "intentionalDifference": false,
+      "reads": [
+        [
+          0,
+          10
+        ],
+        [
+          10,
+          52
+        ]
+      ]
+    },
+    {
+      "name": "id3-utf16le",
+      "extension": "mp3",
+      "legacy": {
+        "title": "雪 🎧"
+      },
+      "expected": {
+        "title": "雪 🎧"
+      },
+      "intentionalDifference": false,
+      "reads": [
+        [
+          0,
+          10
+        ],
+        [
+          10,
+          37
+        ]
+      ]
+    },
+    {
+      "name": "id3-utf16be",
+      "extension": "mp3",
+      "legacy": {
+        "title": "雪 🎧"
+      },
+      "expected": {
+        "title": "雪 🎧"
+      },
+      "intentionalDifference": false,
+      "reads": [
+        [
+          0,
+          10
+        ],
+        [
+          10,
+          23
+        ]
+      ]
+    },
+    {
+      "name": "id3-latin1",
+      "extension": "mp3",
+      "legacy": {
+        "artist": "Beyoncé"
+      },
+      "expected": {
+        "artist": "Beyoncé"
+      },
+      "intentionalDifference": false,
+      "reads": [
+        [
+          0,
+          10
+        ],
+        [
+          10,
+          18
+        ]
+      ]
+    },
+    {
+      "name": "id3-v22-pic-corrected",
+      "extension": "mp3",
+      "legacy": null,
+      "expected": {
+        "artwork": [
+          137,
+          80,
+          78,
+          71,
+          1,
+          2,
+          3,
+          4
+        ],
+        "artworkMimeType": "image/png"
+      },
+      "intentionalDifference": true,
+      "reads": [
+        [
+          0,
+          10
+        ],
+        [
+          10,
+          20
+        ]
+      ]
+    },
+    {
+      "name": "aiff-label",
+      "extension": "aiff",
+      "legacy": {
+        "label": "Hyperdub"
+      },
+      "expected": {
+        "label": "Hyperdub"
+      },
+      "intentionalDifference": false,
+      "reads": [
+        [
+          0,
+          12
+        ],
+        [
+          12,
+          8
+        ],
+        [
+          20,
+          29
+        ]
+      ]
+    },
+    {
+      "name": "flac-label",
+      "extension": "flac",
+      "legacy": {
+        "label": "Kompakt"
+      },
+      "expected": {
+        "label": "Kompakt"
+      },
+      "intentionalDifference": false,
+      "reads": [
+        [
+          0,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          8,
+          29
+        ]
+      ]
+    },
+    {
+      "name": "flac-publisher",
+      "extension": "flac",
+      "legacy": {
+        "label": "Kompakt"
+      },
+      "expected": {
+        "label": "Kompakt"
+      },
+      "intentionalDifference": false,
+      "reads": [
+        [
+          0,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          8,
+          33
+        ]
+      ]
+    },
+    {
+      "name": "flac-organization",
+      "extension": "flac",
+      "legacy": {
+        "label": "Kompakt"
+      },
+      "expected": {
+        "label": "Kompakt"
+      },
+      "intentionalDifference": false,
+      "reads": [
+        [
+          0,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          8,
+          36
+        ]
+      ]
+    },
+    {
+      "name": "flac-organisation",
+      "extension": "flac",
+      "legacy": {
+        "label": "Kompakt"
+      },
+      "expected": {
+        "label": "Kompakt"
+      },
+      "intentionalDifference": false,
+      "reads": [
+        [
+          0,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          8,
+          36
+        ]
+      ]
+    },
+    {
+      "name": "flac-all",
+      "extension": "flac",
+      "legacy": {
+        "title": "Title",
+        "artist": "Artist",
+        "album": "Album",
+        "genre": "House",
+        "label": "Warp",
+        "year": 2022,
+        "bpm": 127.3,
+        "key": "Am"
+      },
+      "expected": {
+        "title": "Title",
+        "artist": "Artist",
+        "album": "Album",
+        "genre": "House",
+        "label": "Warp",
+        "year": 2022,
+        "bpm": 127.3,
+        "key": "Am"
+      },
+      "intentionalDifference": false,
+      "reads": [
+        [
+          0,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          8,
+          125
+        ]
+      ]
+    },
+    {
+      "name": "flac-label-priority",
+      "extension": "flac",
+      "legacy": {
+        "label": "Warp"
+      },
+      "expected": {
+        "label": "Warp"
+      },
+      "intentionalDifference": false,
+      "reads": [
+        [
+          0,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          8,
+          54
+        ]
+      ]
+    },
+    {
+      "name": "flac-artwork",
+      "extension": "flac",
+      "legacy": {
+        "artwork": [
+          137,
+          80,
+          78,
+          71,
+          1,
+          2,
+          3,
+          4
+        ],
+        "artworkMimeType": "image/png"
+      },
+      "expected": {
+        "artwork": [
+          137,
+          80,
+          78,
+          71,
+          1,
+          2,
+          3,
+          4
+        ],
+        "artworkMimeType": "image/png"
+      },
+      "intentionalDifference": false,
+      "reads": [
+        [
+          0,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          8,
+          49
+        ]
+      ]
+    },
+    {
+      "name": "mp4-label",
+      "extension": "m4a",
+      "legacy": {
+        "label": "Defected"
+      },
+      "expected": {
+        "label": "Defected"
+      },
+      "intentionalDifference": false,
+      "reads": [
+        [
+          0,
+          8
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          16,
+          8
+        ],
+        [
+          24,
+          8
+        ],
+        [
+          32,
+          8
+        ],
+        [
+          44,
+          8
+        ],
+        [
+          52,
+          8
+        ],
+        [
+          60,
+          8
+        ],
+        [
+          88,
+          8
+        ],
+        [
+          100,
+          5
+        ],
+        [
+          60,
+          8
+        ],
+        [
+          88,
+          8
+        ],
+        [
+          105,
+          8
+        ],
+        [
+          121,
+          8
+        ]
+      ]
+    },
+    {
+      "name": "mp4-publisher",
+      "extension": "m4a",
+      "legacy": {
+        "label": "Defected"
+      },
+      "expected": {
+        "label": "Defected"
+      },
+      "intentionalDifference": false,
+      "reads": [
+        [
+          0,
+          8
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          16,
+          8
+        ],
+        [
+          24,
+          8
+        ],
+        [
+          32,
+          8
+        ],
+        [
+          44,
+          8
+        ],
+        [
+          52,
+          8
+        ],
+        [
+          60,
+          8
+        ],
+        [
+          88,
+          8
+        ],
+        [
+          100,
+          9
+        ],
+        [
+          60,
+          8
+        ],
+        [
+          88,
+          8
+        ],
+        [
+          109,
+          8
+        ],
+        [
+          125,
+          8
+        ]
+      ]
+    },
+    {
+      "name": "mp4-organization",
+      "extension": "m4a",
+      "legacy": {
+        "label": "Defected"
+      },
+      "expected": {
+        "label": "Defected"
+      },
+      "intentionalDifference": false,
+      "reads": [
+        [
+          0,
+          8
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          16,
+          8
+        ],
+        [
+          24,
+          8
+        ],
+        [
+          32,
+          8
+        ],
+        [
+          44,
+          8
+        ],
+        [
+          52,
+          8
+        ],
+        [
+          60,
+          8
+        ],
+        [
+          88,
+          8
+        ],
+        [
+          100,
+          12
+        ],
+        [
+          60,
+          8
+        ],
+        [
+          88,
+          8
+        ],
+        [
+          112,
+          8
+        ],
+        [
+          128,
+          8
+        ]
+      ]
+    },
+    {
+      "name": "mp4-freeform-filter",
+      "extension": "m4a",
+      "legacy": {
+        "label": "Innervisions"
+      },
+      "expected": {
+        "label": "Innervisions"
+      },
+      "intentionalDifference": false,
+      "reads": [
+        [
+          0,
+          8
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          16,
+          8
+        ],
+        [
+          24,
+          8
+        ],
+        [
+          32,
+          8
+        ],
+        [
+          44,
+          8
+        ],
+        [
+          52,
+          8
+        ],
+        [
+          60,
+          8
+        ],
+        [
+          88,
+          8
+        ],
+        [
+          100,
+          4
+        ],
+        [
+          129,
+          8
+        ],
+        [
+          137,
+          8
+        ],
+        [
+          165,
+          8
+        ],
+        [
+          177,
+          5
+        ],
+        [
+          137,
+          8
+        ],
+        [
+          165,
+          8
+        ],
+        [
+          182,
+          8
+        ],
+        [
+          198,
+          12
+        ],
+        [
+          210,
+          8
+        ]
+      ]
+    },
+    {
+      "name": "mp4-all-corrected",
+      "extension": "m4a",
+      "legacy": {
+        "bpm": 128,
+        "artwork": [
+          137,
+          80,
+          78,
+          71,
+          1,
+          2,
+          3,
+          4
+        ],
+        "artworkMimeType": "image/png",
+        "label": "Label"
+      },
+      "expected": {
+        "title": "Title",
+        "artist": "Artist",
+        "album": "Album",
+        "genre": "House",
+        "year": 2024,
+        "bpm": 128,
+        "label": "Label",
+        "artwork": [
+          137,
+          80,
+          78,
+          71,
+          1,
+          2,
+          3,
+          4
+        ],
+        "artworkMimeType": "image/png"
+      },
+      "intentionalDifference": true,
+      "reads": [
+        [
+          0,
+          8
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          16,
+          8
+        ],
+        [
+          24,
+          8
+        ],
+        [
+          32,
+          8
+        ],
+        [
+          44,
+          8
+        ],
+        [
+          52,
+          8
+        ],
+        [
+          81,
+          8
+        ],
+        [
+          111,
+          8
+        ],
+        [
+          140,
+          8
+        ],
+        [
+          169,
+          8
+        ],
+        [
+          203,
+          8
+        ],
+        [
+          211,
+          8
+        ],
+        [
+          227,
+          2
+        ],
+        [
+          229,
+          8
+        ],
+        [
+          237,
+          8
+        ],
+        [
+          253,
+          8
+        ],
+        [
+          261,
+          8
+        ],
+        [
+          269,
+          8
+        ],
+        [
+          297,
+          8
+        ],
+        [
+          309,
+          5
+        ],
+        [
+          269,
+          8
+        ],
+        [
+          297,
+          8
+        ],
+        [
+          314,
+          8
+        ],
+        [
+          330,
+          5
+        ]
+      ]
+    },
+    {
+      "name": "mp4-numeric-genre",
+      "extension": "m4a",
+      "legacy": {
+        "genre": "Rock"
+      },
+      "expected": {
+        "genre": "Rock"
+      },
+      "intentionalDifference": false,
+      "reads": [
+        [
+          0,
+          8
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          16,
+          8
+        ],
+        [
+          24,
+          8
+        ],
+        [
+          32,
+          8
+        ],
+        [
+          44,
+          8
+        ],
+        [
+          52,
+          8
+        ],
+        [
+          60,
+          8
+        ],
+        [
+          76,
+          2
+        ]
+      ]
+    },
+    {
+      "name": "empty-id3",
+      "extension": "mp3",
+      "legacy": null,
+      "expected": null,
+      "intentionalDifference": false,
+      "reads": [
+        [
+          0,
+          10
+        ],
+        [
+          10,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "invalid-mp3",
+      "extension": "mp3",
+      "legacy": null,
+      "expected": null,
+      "intentionalDifference": false,
+      "reads": [
+        [
+          0,
+          10
+        ]
+      ]
+    },
+    {
+      "name": "unsupported",
+      "extension": "wav",
+      "legacy": null,
+      "expected": null,
+      "intentionalDifference": false,
+      "reads": []
+    }
+  ],
+  "utilities": {
+    "bpm": [
+      {
+        "input": "128",
+        "output": 128
+      },
+      {
+        "input": "128.56 BPM",
+        "output": 128.6
+      },
+      {
+        "input": "500",
+        "output": 500
+      },
+      {
+        "input": "0",
+        "output": null
+      },
+      {
+        "input": "501",
+        "output": null
+      },
+      {
+        "input": "junk",
+        "output": null
+      },
+      {
+        "input": "x .7",
+        "output": 0.7
+      },
+      {
+        "input": "12.3.4",
+        "output": 12.3
+      }
+    ],
+    "year": [
+      {
+        "input": "2024-01-01",
+        "output": 2024
+      },
+      {
+        "input": "1899",
+        "output": null
+      },
+      {
+        "input": "2100",
+        "output": 2100
+      },
+      {
+        "input": "2101",
+        "output": null
+      },
+      {
+        "input": "bad",
+        "output": null
+      }
+    ]
+  }
+}
